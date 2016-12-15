@@ -1,0 +1,13 @@
+---
+# vars file for dgnest.letsencrypt (Ubuntu specific)
+
+_letsencrypt_package_dependencies:
+  - build-essential
+
+
+_letsencrypt_dependencies:
+  - name: build-essential
+    version: 1.0.0
+
+_letsencrypt_packages:
+  - packages

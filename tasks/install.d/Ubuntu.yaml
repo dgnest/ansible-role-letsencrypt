@@ -1,0 +1,16 @@
+---
+
+# task file for dgnest.letsencrypt
+
+- name: Ensure apt cache is up to date
+  apt:
+    update_cache: yes
+
+
+- name: Install letsencrypt dependencies
+
+  apt: name={{ item }} state=present update_cache=yes
+
+  with_items: _letsencrypt_packages
+  tags:
+    - letsencrypt
