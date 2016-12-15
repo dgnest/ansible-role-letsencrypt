@@ -10,8 +10,6 @@ SCRIPT_DIR = $(ROOT_DIR)/script
 WGET = wget
 
 # Bin scripts
-ANSIBLE_PROVISION = $(shell) $(SCRIPT_DIR)/provision.sh
-ANSIBLE_DEPLOY = $(shell) $(SCRIPT_DIR)/deploy.sh
 CLEAN = $(shell) $(SCRIPT_DIR)/clean.sh
 GVM = $(shell) $(SCRIPT_DIR)/gvm.sh
 GRIP = $(shell) $(SCRIPT_DIR)/grip.sh
