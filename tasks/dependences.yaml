@@ -6,37 +6,19 @@
   sudo: yes
   apt:
     update_cache: True
-  when: ansible_distribution == "Ubuntu"
+  become: yes
+  when: ansible_pkg_mgr == "apt"
   tags:
     - apt
     - update_cache
+    - install
 
 - name: Install letsencrypt package dependencies
-  sudo: yes
-  apt:
-
-    name: "{{ item }}"
-
-    state: present
-  register: install_letsencrypt_package_dependencies
-  when: _letsencrypt_package_dependencies is defined
-  with_items: _letsencrypt_package_dependencies
+  package: name={{ item }} state=present
+  become: yes
+  with_items: "{{ _letsencrypt_packages | default([]) }}"
+  register: install_letsencrypt_packages
+  when: _letsencrypt_packages is defined
+  with_items: _letsencrypt_packages
   tags:
-    - apt
-    - dependencies
-- debug: var=install_letsencrypt_package_dependencies.stdout_lines
-
-- name: Install letsencrypt dependencies
-  sudo: yes
-  apt:
-
-    name: "{{ item.name }}"
-
-    state: present
-  register: install_letsencrypt_dependencies
-  when: _letsencrypt_dependencies is defined
-  with_items: _letsencrypt_dependencies
-  tags:
-    - apt
-    - dependencies
-- debug: var=install_letsencrypt_dependencies.stdout_lines
+    - install
