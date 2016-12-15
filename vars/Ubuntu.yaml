@@ -1,0 +1,22 @@
+---
+# vars file for dgnest.letsencrypt (Ubuntu specific)
+
+_letsencrypt_package_name: python-virtualenv
+
+_letsencrypt_pip_packages:
+  - setuptools
+  - pip
+  - letsencrypt
+
+_letsencrypt_packages:
+  - python
+  - python-dev
+  - python-virtualenv
+  - gcc
+  - dialog
+  - libaugeas0
+  - libssl-dev
+  - libffi-dev
+  - ca-certificates
+  - python-pip
+  - git
