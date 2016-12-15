@@ -1,13 +1,23 @@
 ---
 # vars file for dgnest.letsencrypt (CentOS specific)
 
-_letsencrypt_package_dependencies:
-  - build-essential
+_letsencrypt_package_name: python-virtualenv
 
-
-_letsencrypt_dependencies:
-  - name: build-essential
-    version: 1.0.0
+_letsencrypt_pip_packages:
+  - setuptools
+  - pip
+  - letsencrypt
 
 _letsencrypt_packages:
-  - packages
+  - python
+  - python-dev
+  - python-virtualenv
+  - gcc
+  - dialog
+  - libaugeas0
+  - libssl-dev
+  - libffi-dev
+  - ca-certificates
+  - python-pip
+  - git
+  - virtualenv
