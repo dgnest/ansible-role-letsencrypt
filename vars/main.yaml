@@ -1,0 +1,15 @@
+---
+# vars file for dgnest.letsencrypt
+
+# _dgnest.letsencrypt_create_files:
+
+#   - path: "{{ _path_dir }}"
+#     state: "directory"
+#     # group: "root"
+#     owner: "{{ user }}"
+
+
+# _dgnest.letsencrypt:
+#   templates:
+#     - src: "default.j2"
+#       dest: {{ _dgnest.letsencrypt_file }}

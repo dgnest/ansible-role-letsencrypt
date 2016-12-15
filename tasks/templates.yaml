@@ -1,0 +1,11 @@
+---
+# task for dgnest.letsencrypt
+
+- name: copy templates
+  template:
+
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+
+  with_items: _letsencrypt.templates
+  when: _letsencrypt.templates is defined

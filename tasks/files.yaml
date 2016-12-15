@@ -1,0 +1,13 @@
+---
+# environment file for dgnest.letsencrypt
+
+- name: Create files letsencrypt
+  sudo: yes
+  file:
+
+    path: "{{ item.path }}"
+    state: "{{ item.state }}"
+    owner: "{{ item.owner }}"
+
+  with_items: _letsencrypt_create_files
+  when: _letsencrypt_create_files is defined
