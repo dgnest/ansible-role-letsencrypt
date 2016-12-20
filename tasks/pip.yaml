@@ -6,9 +6,10 @@
     virtualenv: "{{ letsencrypt_venv }}"
     virtualenv_site_packages: no
     name: "{{ item }}"
-    state: latest
+    state: present
     virtualenv_python: python2
   become: true
-  with_items: '{{_letsencrypt_pip_packages}}'
+  with_items: '{{ _letsencrypt_pip_packages | default([]) }}'
+  when: _letsencrypt_pip_packages is defined
   tags:
     - install
