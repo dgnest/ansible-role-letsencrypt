@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # -*- coding: utf-8 -*-
 
-PROJECT_NAME=ansible-role-letsencrypt
-PYTHON_VERSION=2.7.9
-PYENV_NAME="${PROJECT_NAME}"
+export PROJECT_NAME=ansible-role-letsencrypt
 
 export PYTHON_VERSION=2.7.9
 export PYENV_NAME="${PROJECT_NAME}"

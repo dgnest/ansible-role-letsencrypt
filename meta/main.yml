@@ -4,7 +4,7 @@ galaxy_info:
   author: Luis Mayta
   description: This Ansible Role infuses antigravity, you are warned
   company: dgnest
-  version: 0.0.1
+  version: 0.0.2
   license: Mit
   min_ansible_version: 2.0
   platforms:
@@ -95,7 +95,7 @@ galaxy_info:
   # Below are all categories currently available. Just as with
   # the platforms above, uncomment those that apply to your role.
   #
-categories:
+  categories:
   #- cloud
   #- cloud:ec2
   #- cloud:gce
@@ -104,7 +104,7 @@ categories:
   #- database
   #- database:nosql
   #- database:sql
-  - development
+    - development
   #- monitoring
   #- networking
   #- packaging
