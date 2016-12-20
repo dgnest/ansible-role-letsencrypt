@@ -23,7 +23,7 @@
     value: "{{ letsencrypt_webroot_path }}"
     dest: "/etc/letsencrypt/renewal/{{ letsencrypt_cert_domains[0] }}.conf"
   become: true
-  with_items: "{{ letsencrypt_cert_domains }}"
+  with_items: "{{ letsencrypt_cert_domains | default([]) }}"
 
 - name: Install renewal cron
   become: true
