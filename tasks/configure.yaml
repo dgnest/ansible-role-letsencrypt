@@ -5,12 +5,12 @@
   file:
     path: "{{ letsencrypt_webroot_path }}"
     state: directory
-    follow: yes
-  become: yes
+    follow: true
+  become: true
 
 - name: Attempt to get the certificate using the webroot authenticator
   command: "{{ letsencrypt_command }} -a webroot --webroot-path {{ letsencrypt_webroot_path }} certonly"
-  become: yes
+  become: true
   args:
     creates: "/etc/letsencrypt/live/{{ letsencrypt_cert_domains[0] }}"
   when: letsencrypt_authenticator == "webroot"
@@ -18,6 +18,6 @@
 
 - name: Attempt to get the certificate using the standalone authenticator (in case eg the webserver is not running yet)
   command: "{{ letsencrypt_command }} -a standalone auth {{ letsencrypt_standalone_command_args }}"
-  become: yes
+  become: true
   args:
     creates: "/etc/letsencrypt/live/{{ letsencrypt_cert_domains[0] }}"

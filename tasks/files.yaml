@@ -2,7 +2,7 @@
 # environment file for dgnest.letsencrypt
 
 - name: Create files letsencrypt
-  sudo: yes
+  become: true
   file:
 
     path: "{{ item.path }}"

@@ -3,10 +3,10 @@
 # task file for dgnest.letsencrypt
 
 - name: Update package repositories
-  sudo: yes
+  become: true
   apt:
     update_cache: True
-  become: yes
+  become: true
   when: ansible_pkg_mgr == "apt"
   tags:
     - apt
@@ -15,7 +15,7 @@
 
 - name: Install letsencrypt package dependencies
   package: name={{ item }} state=present
-  become: yes
+  become: true
   with_items: "{{ _letsencrypt_packages | default([]) }}"
   register: install_letsencrypt_packages
   when: _letsencrypt_packages is defined
