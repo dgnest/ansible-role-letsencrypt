@@ -19,6 +19,5 @@
   with_items: "{{ _letsencrypt_packages | default([]) }}"
   register: install_letsencrypt_packages
   when: _letsencrypt_packages is defined
-  with_items: _letsencrypt_packages
   tags:
     - install
