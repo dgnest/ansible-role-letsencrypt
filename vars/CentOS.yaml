@@ -4,8 +4,8 @@
 _letsencrypt_package_name: python-virtualenv
 
 _letsencrypt_pip_packages:
-  - setuptools
-  - pip
+  - blist
+  - ansicolors
   - letsencrypt
 
 _letsencrypt_packages:

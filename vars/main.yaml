@@ -14,8 +14,8 @@
 #       dest: {{ _dgnest.letsencrypt_file }}
 
 _letsencrypt_pip_packages:
-  - setuptools
-  - pip
+  - blist
+  - ansicolors
   - letsencrypt
 
 _letsencrypt_packages:
