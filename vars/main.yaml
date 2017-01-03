@@ -30,4 +30,3 @@ _letsencrypt_packages:
   - ca-certificates
   - python-pip
   - git
-  - virtualenv
