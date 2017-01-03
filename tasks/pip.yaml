@@ -1,6 +1,17 @@
 ---
 # task for dgnest.letsencrypt
 
+- name: Upgrade pip wheel and setuptools
+  pip:
+    name: "{{ item }}"
+    virtualenv: "{{ letsencrypt_venv }}"
+    state: latest
+    extra_args: '--upgrade'
+  with_items:
+    - pip
+    - wheel
+    - setuptools
+
 - name: Install python depends
   pip:
     virtualenv: "{{ letsencrypt_venv }}"

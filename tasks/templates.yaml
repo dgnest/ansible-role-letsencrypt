@@ -5,5 +5,5 @@
   template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
-  with_items: "{{ _letsencrypt.templates | default({}) }}"
-  when: _letsencrypt.templates is defined
+  with_items: "{{ _letsencrypt_templates | default({}) }}"
+  when: _letsencrypt_templates is defined
